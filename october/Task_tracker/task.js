@@ -27,7 +27,7 @@ function createTask(taskText) {
   taskLeft.appendChild(checkbox);
   taskLeft.appendChild(span);
 
-  // Right side (buttons)
+  // Task Actions button
   const taskActions = document.createElement("div");
   taskActions.classList.add("task-actions");
 
@@ -41,7 +41,7 @@ function createTask(taskText) {
   deleteBtn.classList.add("delete");
   deleteBtn.innerHTML = '<i class="fas fa-trash"></i>Delete';
 
-  // Edit task
+  // Edit button event
   editBtn.addEventListener("click", () => {
     const newTask = prompt("Edit your task:", span.textContent);
     if (newTask !== null && newTask.trim() !== "") {
@@ -49,7 +49,6 @@ function createTask(taskText) {
     }
   });
 
-  // Delete task
   deleteBtn.addEventListener("click", () => {
     taskList.removeChild(taskItem);
   });
@@ -57,11 +56,9 @@ function createTask(taskText) {
   taskActions.appendChild(editBtn);
   taskActions.appendChild(deleteBtn);
 
-  // Append both sides to task item
   taskItem.appendChild(taskLeft);
   taskItem.appendChild(taskActions);
 
-  // Add task to list
   taskList.appendChild(taskItem);
 }
 
@@ -75,10 +72,9 @@ addTaskBtn.addEventListener("click", () => {
   }
 
   createTask(taskText);
-  taskInput.value = ""; // clear input
+  taskInput.value = ""; 
 });
 
-// Also allow pressing "Enter" to add a task
 taskInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     addTaskBtn.click();
