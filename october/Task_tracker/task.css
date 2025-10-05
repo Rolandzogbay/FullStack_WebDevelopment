@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4f6fb;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  font-family: 'Lexend', sans-serif;
+  padding: 2rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+}
+
+h1 {
+  color: #4c1af3;
+  text-align: center;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.task-input {
+  display: flex;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 15px;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.task-input input:focus {
+  border-color: blueviolet;
+}
+
+.task-input button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  background: blueviolet;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.task-input button:hover {
+  background: #5a32f7;
+}
+
+/* Task List */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-item {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 8px rgba(0,0,0,0.05);
+}
+
+.task-item span {
+  font-size: 1.1rem;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.task-actions button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #fff;
+  transition: 0.2s;
+}
+
+.edit {
+  background: #fd9647;
+}
+.edit:hover {
+  background: #e27f2f;
+}
+
+.delete {
+  background: #ff4d4d;
+}
+.delete:hover {
+  background: #d93636;
+}
+
+/* Completed Task Style */
+.task-item span.completed {
+  text-decoration: line-through;
+  color: #999;
+}
